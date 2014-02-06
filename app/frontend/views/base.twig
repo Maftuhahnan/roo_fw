@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{% block title %}Your Blog{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ base_url }}assets/yourblog/css/style.css"/>
+</head>
+
+<body>
+    <div id="outerwrapper">
+        <div id="wrapper">
+        
+            <div id="nav">
+                <ul>
+                <li><a href="{{ base_url }}">Home</a></li>
+                <li><a href="{{ base_url }}">Contact</a></li>
+                <li><a href="{{ base_url }}">About me</a></li>
+                <li><a href="{{ base_url }}">Advertise</a></li>
+                </ul>
+            </div>
+            
+            <div id="header">
+                <div id="logo"><h1><a href="{{ base_url }}">Your Blog</a></h1></div>
+                <div id="search">
+                    <div id="inputs"><input type="text" id="inputsearch" placeholder="Search..." /></div>
+                    <div id="submits"><input type="button" id="submitsearch" /></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div id="content">
+                <div id="leftcolumn">
+                    {% block leftcolumn %}{% endblock %}
+                </div>
+
+                <div id="rightcolumn">
+                    {% block rightcolum %}
+                    <h3>Archives</h3>
+                    <ul class="archives">
+                        <li><a href="#">May</a></li>
+                        <li><a href="#">June</a></li>
+                        <li><a href="#">July</a></li>
+                    </ul>
+                    <h3>Categories</h3>
+                    <ul class="categories">
+                        <li><a href="#">Uncategorized</a></li>
+                        <li><a href="#">Internet</a></li>
+                        <li><a href="#">My Life </a></li>
+                    </ul>
+                    <h3>Blogroll</h3>
+                    <ul>
+                        <li><a href="#">Uncategorized</a></li>
+                        <li><a href="#">Internet</a></li>
+                        <li><a href="#">My Life </a></li>
+                    </ul>
+                    {% endblock %}
+                </div>
+
+                <div class="clear"></div>
+            </div>
+            
+            <div id="footer">Template designed by <strong>Michael Clarke</strong></div>
+        </div>
+    </div>
+</body>
+</html>

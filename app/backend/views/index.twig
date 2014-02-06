@@ -1,0 +1,28 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<h3 class="tit">Posts</h3>
+<table>
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Title</th>
+            <th>Slug</th>
+            <th>Content</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+            <tr {% if loop.index % 2 == 0 %}class="bg"{% endif %}>
+                <td>{{ loop.index }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.slug }}</td>
+                <td>{{ post.content|slice(0, 50) }}...</td>
+                <td>{{ post.cat_id }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table><br />
+{% endblock %}
